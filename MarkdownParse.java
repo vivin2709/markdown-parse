@@ -2,6 +2,8 @@
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MarkdownParse {
     public static ArrayList<String> getLinks(String markdown) {
@@ -18,12 +20,11 @@ public class MarkdownParse {
             if(openParen<0 || closeParen<0) {
                 continue;
             }
-              /* if(nextOpenBracket!=0 && markdown.charAt(nextOpenBracket-1)=='!')
+               if(nextOpenBracket!=0 && markdown.charAt(nextOpenBracket-1)=='!')
             {
                 currentIndex = closeParen + 1;
                 continue;
             }
-            */
             
             toReturn.add(markdown.substring(openParen + 1, closeParen));
             currentIndex = closeParen + 1;

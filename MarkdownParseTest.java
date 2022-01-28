@@ -1,14 +1,10 @@
 import static org.junit.Assert.*;
-//static
 import org.junit.*;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
-import org.junit.Test;
-
-
 
 public class MarkdownParseTest {
     //declare a test method
@@ -18,7 +14,6 @@ public class MarkdownParseTest {
     }
 
 @Test 
-
  public void Testgetlinks()throws IOException{
 
     Path fileName = Path.of("Test-file.md");
@@ -27,7 +22,6 @@ public class MarkdownParseTest {
     assertEquals(List.of("https://something.com","some-page.html"),links);
  }
  @Test 
-
  public void Testgetlink2()throws IOException{
 
     Path fileName = Path.of("Test-file2.md");
@@ -44,7 +38,6 @@ public class MarkdownParseTest {
     assertEquals(List.of("rocknroll.com","wowcserocks.com","profpolitzisprettychill.com","gotritons.edu"),links);
  }
  @Test 
-
  public void Testgetlink4()throws IOException{
 
     Path fileName = Path.of("Test-file4.md");
@@ -52,6 +45,5 @@ public class MarkdownParseTest {
     ArrayList<String> links = MarkdownParse.getLinks(contents);
     assertEquals(List.of(),links);
  }
-
 }
 

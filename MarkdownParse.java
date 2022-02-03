@@ -25,9 +25,13 @@ public class MarkdownParse {
                 currentIndex = closeParen + 1;
                 continue;
             }
-            
+            if(markdown.charAt(openParen-1)==']')
+            {
             toReturn.add(markdown.substring(openParen + 1, closeParen));
             currentIndex = closeParen + 1;
+            }
+            else 
+            break;
         }
         return toReturn;
     }

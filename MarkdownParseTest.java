@@ -22,6 +22,7 @@ public class MarkdownParseTest {
     ArrayList<String> links = MarkdownParse.getLinks(contents);
     assertEquals(List.of("https://something.com","some-page.html"),links);
  }
+ 
  @Test 
  public void Testgetlink2()throws IOException{
 
@@ -30,6 +31,7 @@ public class MarkdownParseTest {
     ArrayList<String> links = MarkdownParse.getLinks(contents);
     assertEquals(List.of("something.in"),links);
  }
+ 
  @Test 
  public void Testgetlink3()throws IOException{
 
@@ -38,13 +40,14 @@ public class MarkdownParseTest {
     ArrayList<String> links = MarkdownParse.getLinks(contents);
     assertEquals(List.of("rocknroll.com","wowcserocks.com","profpolitzisprettychill.com","gotritons.edu"),links);
  }
+ 
  @Test 
  public void Testgetlink4()throws IOException{
-
     Path fileName = Path.of("Test-file4.md");
 	String contents = Files.readString(fileName);
     ArrayList<String> links = MarkdownParse.getLinks(contents);
     assertEquals(List.of(),links);
  }
+ 
 }
 
